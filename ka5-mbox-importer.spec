@@ -1,14 +1,15 @@
-%define		kdeappsver	18.12.1
+%define		kdeappsver	19.04.1
+%define		kframever	5.56.0
 %define		qtver		5.9.0
 %define		kaname		mbox-importer
 Summary:	Mbox importer
 Name:		ka5-%{kaname}
-Version:	18.12.1
+Version:	19.04.1
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Applications
 Source0:	http://download.kde.org/stable/applications/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	08078d1d982200ad77870ea79c6cdecb
+# Source0-md5:	8555137fa34f1c670aaa5bdc5666eaca
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel >= %{qtver}
 BuildRequires:	Qt5Gui-devel
@@ -19,12 +20,12 @@ BuildRequires:	ka5-akonadi-devel >= %{kdeappsver}
 BuildRequires:	ka5-mailcommon-devel >= %{kdeappsver}
 BuildRequires:	ka5-mailcommon-devel >= %{kdeappsver}
 BuildRequires:	ka5-mailimporter-devel >= %{kdeappsver}
-BuildRequires:	ka5-pimcommon-devel
-BuildRequires:	kf5-extra-cmake-modules >= 5.51.0
-BuildRequires:	kf5-kconfig-devel >= 5.51.0
-BuildRequires:	kf5-kcrash-devel >= 5.51.0
-BuildRequires:	kf5-kio-devel >= 5.51.0
-BuildRequires:	kf5-kservice-devel >= 5.51.0
+BuildRequires:	ka5-pimcommon-devel >= %{kdeappsver}
+BuildRequires:	kf5-extra-cmake-modules >= %{kframever}
+BuildRequires:	kf5-kconfig-devel >= %{kframever}
+BuildRequires:	kf5-kcrash-devel >= %{kframever}
+BuildRequires:	kf5-kio-devel >= %{kframever}
+BuildRequires:	kf5-kservice-devel >= %{kframever}
 BuildRequires:	ninja
 BuildRequires:	qt5-build >= %{qtver}
 BuildRequires:	rpmbuild(macros) >= 1.164
@@ -44,6 +45,7 @@ install -d build
 cd build
 %cmake \
 	-G Ninja \
+	-DHTML_INSTALL_DIR=%{_kdedocdir} \
 	-DKDE_INSTALL_USE_QT_SYS_PATHS=ON \
 	..
 %ninja_build
