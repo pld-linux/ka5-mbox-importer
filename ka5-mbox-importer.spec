@@ -37,6 +37,9 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 Mbox importer.
 
+%description -l pl.UTF-8
+Importer Mbox.
+
 %prep
 %setup -q -n %{kaname}-%{version}
 
