@@ -1,15 +1,15 @@
-%define		kdeappsver	21.12.1
+%define		kdeappsver	21.12.2
 %define		kframever	5.56.0
 %define		qtver		5.9.0
 %define		kaname		mbox-importer
 Summary:	Mbox importer
 Name:		ka5-%{kaname}
-Version:	21.12.1
+Version:	21.12.2
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Applications
 Source0:	http://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	903eadc647e2804f2222ca84443891dc
+# Source0-md5:	3b387e7dcfe961bdf39b99131885e9b6
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel >= %{qtver}
 BuildRequires:	Qt5Gui-devel
